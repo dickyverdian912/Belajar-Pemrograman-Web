@@ -1,0 +1,126 @@
+<!-- Use Bootstrap -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="dropdown mb-3">
+            <label for="nim">Nim:</label>
+            <select id="nim_mhs" onclick="pilihNim()">
+                <option value="">Pilih Nim</option>
+                <option value="Muh Amin">A11.2015.12345</option>
+                <option value="Santoso">A11.2015.12346</option>
+                <option value="Sutrisno">A11.2015.12347</option>
+            </select>
+        </div>
+        <form>
+            <div class="form-group">
+                <label>Nama (otomatis)</label>
+                <input type="text" disabled class="form-control" id="nama_mhs" placeholder="Nama">
+
+            </div>
+            <div class="form-group">
+                <label>Nilai Tugas : </label>
+                <input type="number" class="form-control" min="1" max="100" id="nilai_tugas" placeholder="Nilai Tugas">
+            </div>
+            <div class="form-group">
+                <label>Nilai UTS : </label>
+                <input type="number" class="form-control" min="1" max="100" id="nilai_uts" placeholder="Nilai UTS">
+            </div>
+            <div class="form-group">
+                <label>Nilai UAS : </label>
+                <input type="number" class="form-control" min="1" max="100" id="nilai_uas" placeholder="Nilai UAS">
+            </div>
+            <div class="form-group">
+                <label>Nilai Akhir (otomatis) : </label>
+                <input type="text" disabled class="form-control" id="nilai_akhir" placeholder="Nilai Akhir">
+            </div>
+            <button type="submit" class="btn btn-primary" onClick="return hitungNilaiAkhir()">Submit</button>
+        </form>
+
+        <p class="mt-4" id="table"></p>
+    </div>
+
+    <script>
+        let data = {}; //global
+
+        const pilihNim = () => {
+            //memberikan nilai dari dom
+            const valueNimMhs = document.getElementById('nim_mhs').selectedIndex;
+            const namaMhs = document.getElementsByTagName("option")[valueNimMhs].value;
+            const valueNamaMhs = document.getElementById('nama_mhs');
+
+            //set value namaMhs ke input
+            valueNamaMhs.value = namaMhs;
+
+            //push ke object data
+            data.nama = valueNamaMhs.value;
+
+            if (valueNamaMhs.value === "Muh Amin") {
+                return data.nim = "A11.2015.12345"
+            } else if (valueNamaMhs.value === "Santoso") {
+                return data.nim = "A11.2015.12346"
+            } else {
+                return data.nim = "A11.2015.1234"
+            }
+        }
+
+        const hitungNilaiAkhir = () => {
+            //ambil nilai dari dom
+            const nilaiTugas = document.getElementById('nilai_tugas');
+            const nilaiUts = document.getElementById('nilai_uts');
+            const nilaiUas = document.getElementById('nilai_uas');
+            const nilaiAkhir = document.getElementById('nilai_akhir');
+
+            //set value
+            let valueNilaiTugas = nilaiTugas.value;
+            let valueNilaiUts = nilaiUts.value;
+            let valueNilaiUas = nilaiUas.value;
+
+            //menghitung NA
+            let hasil = (0.4 * valueNilaiTugas) + (0.3 * valueNilaiUts) + (0.3 * valueNilaiUas);
+            //menampilkan NA pada label
+            nilaiAkhir.value = hasil;
+
+            //push ke object data
+            data.hasil = hasil;
+
+            //menampilkan data
+            const table = document.getElementById('table');
+            table.innerHTML =
+                `<table border=3 class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">NIM</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Nilai Akhir</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">${data.nim}</th>
+                        <td>${data.nama}</td>
+                        <td>${data.hasil}</td>
+                        <td>${hasil > 60 ? 'LULUS' : 'TIDAK'}</td>
+                    </tr>
+                    </tbody>
+                </table>`
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

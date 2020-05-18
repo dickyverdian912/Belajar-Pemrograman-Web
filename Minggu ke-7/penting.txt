@@ -1,0 +1,7 @@
+admin=
+user : dicky
+pass : 12345
+
+Operator
+user : operator
+pass : 12345

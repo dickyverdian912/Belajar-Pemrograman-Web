@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Latihan minggu 1</title>
+		<style>
+		ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  background-color: #333333;
+		}
+
+		li {
+		  float: left;
+		}
+
+		li a {
+		  display: block;
+		  color: white;
+		  text-align: center;
+		  padding: 16px;
+		  text-decoration: none;
+		}
+
+		li a:hover {
+		  background-color: #111111;
+		}
+		table, th, td 
+		{
+		border: 1px solid white;
+		}
+		table 
+		{
+		border-spacing: 15px;
+		}
+		</style>
+    </head>
+    <body style="background-color:lightgrey;">
+	<ul>
+	  <li><a href="#Daftar">Daftar</a></li>
+	  <li><a href="#Form">Form</a></li>
+	</ul>
+		<form>
+			<table style="width:60%">
+			<h1><caption>FORM PENDATAAN MAHASISWA</caption></h1>
+				<tr>
+				  <td>
+				  Fakultas<br>
+				  Sistem Informasi
+				  </td>
+				  <td>
+				  Agama:<br>
+				  <form action="/action_page.php" method="get">
+					  <input list="Agama" name="Agama">
+					  <datalist id="Agama">
+						<option value="Islam">
+						<option value="Kristen">
+						<option value="Katholik">
+						<option value="Hindhu">
+						<option value="Budha">
+					  </datalist>
+				   </form>
+				  </td>
+				  <td>
+				  Alamat Sekarang:<br>
+				  <input type="text" name="AlamatSekarang">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Jurusan:<br>
+				  <input type="text" name="Jurusan">
+				  </td>
+				  <td>
+				  Status Marital:<br>
+				  <form action="/action_page.php" method="get">
+					  <input list="StatusMarital" name="StatusMarital">
+					  <datalist id="StatusMarital">
+						<option value="Lajang">
+						<option value="Menikah">
+						<option value="Janda">
+						<option value="Duda">
+					  </datalist>
+				   </form>
+				  </td>
+				  <td>
+				  RT/RW Sekarang:<br>
+				  <input type=text name=RT size=5>
+				   / 
+				  <input type=text name=RW size=5>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Program Studi:<br>
+				  <input type="text" name="Prodi">
+				  </td>
+				  <td>
+				  Nama Gadis Ibu Kandung:<br>
+				  <input type="text" name="NamaGadisIbuKandung">
+				  </td>
+				  <td>
+				  Desa/Kelurahan Sekarang:<br>
+				  <input type="text" name="Desa/KelurahanSekarang">
+				  </td>
+				</tr>
+				<tr>
+				  <td>Kode Mahasiswa*:<br>
+				  <input type="text" name="KodeMahasiswa">
+				  </td>
+				  <td>
+				  Nama Ayah Kandung:<br>
+				  <input type="text" name="NamaAyahKandung">
+				  </td>
+				  <td>
+				  Kecamatan Sekarang:<br>
+				  <input type="text" name="KecamatanSekarang">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Nama Mahasiswa*:<br>
+				  <input type="text" name="NamaMahasiswa">
+				  </td>
+				  <td>
+				  Tempat Lahir:<br>
+				  <input type="text" name="TempatLahir">
+				  </td>
+				  <td>
+				  Kota Sekarang:<br>
+				  <input type="text" name="KotaSekarang">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  NIK Mahasiswa(No. KTP):<br>
+				  <input type="text" name="nik">
+				  </td>
+				  <td>
+				  Tanggal Lahir:<br>
+				  <form action="/action_page.php">
+					  <input type="date" id="birthday" name="birthday"><br><br>
+				  </form>
+				  </td>
+				  <td>
+				  Kode Pos Sekarang:<br>
+				  <input type="text" name="KodePos">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  No BPJS:<br>
+				  <input type="text" name="NoBPJS">
+				  </td>
+				  <td>
+				  Kewarganegaraan:<br>
+				  <form action="/action_page.php" method="get">
+					  <input list="Kewarganegaraan" name="Kewarganegaraan">
+					  <datalist id="Kewarganegaraan">
+						<option value="WNI">
+						<option value="WNA">
+					  </datalist>
+				   </form>
+				  </td>
+				  <td>
+				  Provinsi Sekarang:<br>
+				  <input type="text" name="Provinsi">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Password:<br>
+				  <input type="text" name="Password">
+				  </td>
+				  <td>
+				  Alamat Asal:<br>
+				  <input type="text" name="AlamatAsal">
+				  </td>
+				  <td>
+				  Transfer:<br>
+					<select id="Transfer">
+					  <option value="Tidak">Tidak</option>
+					  <option value="Iya">Iya</option>
+					</select>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Tahun Angkatan*:<br>
+				  <input type="text" name="TahunAngkatan">
+				  </td>
+				  <td>
+				  RT/RW Asal:<br>
+				  <input type=text name=RT size=5>
+				   / 
+				  <input type=text name=RW size=5>
+				  </td>
+				  <td>
+				  Jenis Pendaftaran:<br>
+				  <select id="JenisPendaftaran">
+					  <option value="--"> -- </option>
+					  <option value="PendaftaranOffline">Pendaftaran Offline</option>
+					  <option value="PendaftaranOnline">Pendaftaran Online</option>
+					</select>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Semester Masuk*:<br>
+				  <form action="/action_page.php" method="get">
+					  <input list="SemesterMasuk" name="SemesterMasuk">
+					  <datalist id="SemesterMasuk">
+						<option value="Satu">
+						<option value="Dua">
+						<option value="Tiga">
+						<option value="Empat">
+					  </datalist>
+				   </form>
+				  </td>
+				  <td>
+				  Desa/Kelurahan Asal:<br>
+				  <input type="text" name="Desa/KelurahanAsal">
+				  </td>
+				  <td>
+				  Status:<br>
+				  <select id="Status">
+					  <option value="--">-- Pilih --</option>
+					  <option value="MahasiswaAktif">Mahasiswa Aktif</option>
+					  <option value="MahasiswaPasif">Mahasiswa Pasif</option>
+					</select>
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Dosen Pembimbing Akademik:<br>
+				  <input type="text" name="DosenPembimbingAkademik">
+				  </td>
+				  <td>
+				  Kecamatan Asal:<br>
+				  <input type="text" name="KecamatanAsal">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  No Telp Orangtua/Wali:<br>
+				  <input type="text" name="NoTelpOrangtua/Wali">
+				  </td>
+				  <td>
+				  Kota Asal:<br>
+				  <input type="text" name="KotaAsal">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Nomer HP Mahasiswa:<br>
+				  <input type="text" name="NomerHPMahasiswa">
+				  </td>
+				  <td>
+				  Kode Pos Asal:<br>
+				  <input type="text" name="KodePosAsal">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Email Aktif Mahasiswa:<br>
+				  <input type="text" name="EmailAktifMahasiswa">
+				  </td>
+				  <td>
+				  Provinsi Asal:<br>
+				  <input type="text" name="ProvinsiAsal">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Tempat Tinggal Saat Kuliah:<br>
+				  <select id="TempatTinggal">
+					  <option value="--">-- Pilih Tempat Tinggal --</option>
+					  <option value="Kost">Kost</option>
+					  <option value="Rumah">Rumah</option>
+					</select>
+				  </td>
+				  <td>
+				  Negara Asal:<br>
+				  <input type="text" name="NegaraAsal">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				  Jenis Kelamin:<br>
+				  <form action="/action_page.php" method="get">
+					  <input list="JenisKelamin" name="JenisKelamin">
+					  <datalist id="JenisKelamin">
+						<option value="Laki-laki">
+						<option value="Perempuan">
+						<option value="Lainnya">
+					  </datalist>
+				   </form>
+				  </td>
+				</tr>
+			</table>
+			<input type="submit" value="Simpan">
+			<input type="submit" value="Batal">
+
+		 </form>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!-- Use Bootstrap & separated javascript -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <title>Latihan Javascript</title>
+</head>
+
+<body>
+<table border=3>
+    <div class="container my-5">
+        <tr><div class="dropdown mb-3">
+            <td><label for="nim">Nim:</label></td>
+            <td><select id="nim_mhs">
+                <option value="">Pilih Nim</option>
+                <option value="Muh Amin">A11.2015.12345</option>
+                <option value="Santoso">A11.2015.12346</option>
+                <option value="Sutrisno">A11.2015.12347</option>
+            </select></td>
+        </div></tr>
+        <form>
+           <tr> <div class="form-group" action="/action_page.php">
+                <td><label>Nama (otomatis)</label></td>
+                <td><input type="text" disabled class="form-control" id="nama_mhs" placeholder="Nama"></td>
+
+            </div>
+		   </tr>
+		   <tr>
+            <div class="form-group">
+                <td><label>Nilai Tugas : </label></td>
+                <td><input type="number" class="form-control" min="1" max="100" id="nilai_tugas" placeholder="1-100"></td>
+            </div>
+		   </tr>
+		   <tr>
+            <div class="form-group">
+                <td><label>Nilai UTS : </label></td>
+                <td><input type="number" class="form-control" min="1" max="100" id="nilai_uts" placeholder="1-100"></td>
+            </div>
+		   </tr>
+		   <tr>
+            <div class="form-group">
+                <td><label>Nilai UAS : </label></td>
+                <td><input type="number" class="form-control" min="1" max="100" id="nilai_uas" placeholder="1-100"></td>
+            </div>
+		   </tr>
+		   <tr>
+            <div class="form-group">
+                <td><label>Nilai Akhir (otomatis) : </label></td>
+                <td><input type="text" disabled class="form-control" id="nilai_akhir" placeholder="Nilai Akhir"></td>
+            </div>
+		   </tr>
+		   <tr>
+            <td><button type="submit" class="btn btn-primary" id="btn-submit">Submit</button></td>
+		   </tr>
+        </form>
+
+        <h4 class="mt-3" id="alert"></h4>
+
+        <p class="mt-4" id="table"></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+    </script>
+    <script src="script.js"></script>
+</table>
+</body>
+
+</html>
